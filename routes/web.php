@@ -23,5 +23,10 @@ Route::get('/app', 'HomeController@index')->name('app');
 Route::group(["middleware" => "auth"],function(){
     Route::prefix('products')->group(function(){
        Route::resource('departaments','ProductDepartamentController'); 
+       Route::resource('categories','ProductCategoryController');
+       Route::get('images/{code}','ProductController@getProductImage');
+       Route::post('images/{code}','ProductController@updateProductImage');
+       Route::delete('images/{id}','ProductController@destroyProductImage');
     });
+    Route::resource('products','ProductController');
 });

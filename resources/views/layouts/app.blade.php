@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -42,8 +42,9 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <router-link to="/products/departaments" class="dropdown-item">Departamentos de productos</router-link>
-                            </div>
+                                <router-link to="/products" class="dropdown-item">Gestionar</router-link>
+                                <router-link to="/products/departaments" class="dropdown-item">Departamentos y categorias</router-link>
+                            </div>                         
                         </li>                     
                     </ul>
 

@@ -19,9 +19,7 @@
                                     <td><img :src="d.image" width="80px" alt=""></td>
                                     <td>{{d.name}}</td>
                                     <td>
-                                        <button class="btn btn-default">
-                                            Ver
-                                        </button>
+                                        <router-link :to="'/products/departaments/'+d.id" class="btn btn-default">Ver</router-link>
                                         <button @click="getDepartament(d.id)" class="btn btn-warning">
                                             Editar
                                         </button>

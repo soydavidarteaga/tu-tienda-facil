@@ -33,6 +33,30 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+window.$backroutes = {
+    departaments:"/products/departaments",
+    categories:"/products/categories",
+    products(id){
+        if(id){
+            return '/products/'+id
+        }else{
+            return '/products'
+        }
+    },
+    image(cod){
+        return "/products/images/"+cod
+    },
+}
+window.rand_code = function (lon){
+    var code = ""
+    var chars = "0123456789abcdefABCDEF"
+    for (let x = 0; x < lon; x++) {
+        var rand = Math.floor(Math.random()*chars.length);
+        code += chars.substr(rand, 1);
+    }
+    return code;
+}  
+
 const app = new Vue({
     router
 
